@@ -40,3 +40,7 @@ echo $myTruck->brake();
 echo '<h2>' . $myTruck->getFilling() . '</h2>';
 
 var_dump($myTruck);
+
+$moto = new Vehicule('red', 1);
+
+var_dump($moto);
