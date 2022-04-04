@@ -1,13 +1,14 @@
 <?php
+require_once 'Vehicule.php';
 
-class Car
+class Car extends Vehicule
 {
-    private int $nbWheels;
-    private int $currentSpeed;
-    private  string $color;
-    private  int $nbSeats;
-    private string $energy;
-    private int $energyLevel = 5;
+    protected int $nbWheels;
+    protected int $currentSpeed;
+    protected  string $color;
+    protected  int $nbSeats;
+    protected string $energy;
+    protected int $energyLevel = 5;
 
     public function __construct(string $color, int $nbSeats, string $energy)
     {

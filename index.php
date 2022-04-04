@@ -2,6 +2,12 @@
 require_once('Car.php');
 require_once('Bicycle.php');
 require_once('Truck.php');
+require_once('HighWay.php');
+require_once('MotorWay.php');
+require_once('PedestrianWay.php');
+require_once('ResidentialWay.php');
+require_once('Skateboard.php');
+
 
 echo '<h1> Car </h1>';
 
@@ -41,6 +47,33 @@ echo '<h2>' . $myTruck->getFilling() . '</h2>';
 
 var_dump($myTruck);
 
-$moto = new Vehicule('red', 1);
+echo '<h1> Abstract </h1>';
 
-var_dump($moto);
+// Instanciations 
+
+$skateBoard = new Skateboard('Blue', 1);
+$road = new MotorWay($myTruck);
+$sidewalk = new PredestrianWay($myCar);
+$lane = new ResidentialWay($myCar);
+
+// Adding vehicules to MotorWay
+echo $road->addVehicle($bike);
+
+$road->addVehicle($myCar);
+
+var_dump($road->getCurrentVehicles());
+
+// Adding vehicules to PedestrianWay
+
+echo $sidewalk->addVehicle($myCar);
+
+$sidewalk->addVehicle($bike);
+
+var_dump($sidewalk->getCurrentVehicles());
+
+// Adding vehicules to ResidentialWay
+
+$lane->addVehicle($skateBoard);
+
+var_dump($lane->getCurrentVehicles());
+

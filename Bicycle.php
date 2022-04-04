@@ -1,11 +1,12 @@
 <?php
+require_once 'Vehicule.php';
 
-class Bicycle
+class Bicycle extends Vehicule
 {
 
-    private  int $nbWheels;
+    protected  int $nbWheels;
 
-    public function __construct(private string $color,  private int $currentSpeed,  private int $nbSeats)
+    public function __construct(protected string $color,  protected int $currentSpeed,  protected int $nbSeats)
     {
         $this->color = $color;
         $this->currentSpeed = $currentSpeed;

@@ -3,13 +3,13 @@
 abstract class HighWay
 {
 
-protected array $currentVehicles = [];
-protected int $nbLane;
-protected int $maxSpeed;
+    protected array $currentVehicles = [];
+    protected int $nbLane;
+    protected int $maxSpeed;
 
-    public function __construct(string $vehicle, int $nbLane, int $maxSpeed)
+    public function __construct(Vehicule $vehicle, int $nbLane, int $maxSpeed)
     {
-        $this->currentVehicles = array_push($currentvehicle, $vehicle);
+        $this->currentVehicles[] = $vehicle;
         $this->nbLane = $nbLane;
         $this->maxSpeed = $maxSpeed;
     }
@@ -19,9 +19,9 @@ protected int $maxSpeed;
         return $this->currentVehicles;
     }
 
-    public function setCurrentVehicles(string $vehicle): void
+    public function setCurrentVehicles(Vehicule $vehicle): void
     {
-        $this->currentVehicles = array_push($currentvehicle, $vehicle);
+        $this->currentVehicles[] = $vehicle;
     }
 
     public function getNbLane(): int
@@ -44,7 +44,6 @@ protected int $maxSpeed;
         $this->maxSpeed = $maxSpeed;
     }
 
-    public function addVehicle(){
-        
-    }
+    abstract public function addVehicle(Vehicule $vehicle);
+    
 }
